@@ -12,11 +12,9 @@ import java.util.List;
 public interface ProductDao extends JpaRepository<Product, Integer> {
 
     Product findById(int id);
-
-    List<Product> findByPrixGreaterThan(int prixLimit);
-
     List<Product> findByNomLike(String recherche);
 
-    @Query("SELECT id, nom, prix FROM Product p WHERE p.prix > :prixLimit")
-    List<Product>  chercherUnProduitCher(@Param("prixLimit") int prix);
+    // List<Product> findByPrixGreaterThan(int prixLimit);
+    @Query("SELECT p FROM Product p WHERE p.prix > :prixLimit")
+    List<Product> chercherUnProduitCher(@Param("prixLimit") int prix);
 }
