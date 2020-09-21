@@ -29,7 +29,7 @@ public class Product implements Serializable {
     @Length(min=3, max=20, message = "Nom trop long ou trop court.")
     private String nom;
 
-    @Min(value = 1)
+    //@Min(value = 1)
     private int prix;
 
     //information que nous ne souhaitons pas exposer
